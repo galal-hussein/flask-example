@@ -11,7 +11,7 @@ class FlaskTestCase(unittest.TestCase):
     def test_login_page_loads(self):
         tester = app.test_client(self)
         response = tester.get('/login', content_type='html/text')
-        self.assertTrue(b'Login you piece of shit' in response.data)
+        self.assertTrue(b'Login now' in response.data)
 
     def test_login_with_right_credentials(self):
         tester = app.test_client(self)
