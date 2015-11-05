@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Hello To my home</h1>
+<br>
+<p>Click <a href="/logout">Here</a> To Logout</p>
+<br><br>
+
+<form class="form-signin" role="form" method="post" action="">
+  {{ form.csrf_token }}
+  <p>
+    {{ form.title(placeholder="Title") }}
+    <span class="error">
+      {% if form.title.errors %}
+        {% for error in form.title.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>
+  <p>
+  {{ form.description(placeholder="description") }}
+    <span class="error">
+      {% if form.description.errors %}
+        {% for error in form.description.errors %}
+          {{ error }}
+        {% endfor %}
+      {% endif %}
+    </span>
+  </p>
+  <button class="btn btn-sm btn-success" type="submit">Create New Post</button>
+</form>
+
+<h3>Posts:</h3>
+{% for post in posts %}
+<strong>Title:</strong> {{ post.title }} <br>
+<strong>Description</strong> {{ post.description }} <br>
+<strong>Author</strong> {{ post.author.name }}<br>
+<br>
+{% endfor %}
+
+{% endblock %}

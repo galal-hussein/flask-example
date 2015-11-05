@@ -1,3 +1,4 @@
 fenv
 *.pyc
 *.db
+coverage/*

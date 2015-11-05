@@ -7,9 +7,15 @@ class BaseConfig(object):
     SECRET_KEY = '\x9a\x80\xce\xa5$[6\xe0\xf2\x01\x1eD{:N"\xdc0$\xc2\xce,/\xf5'
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-
+    print SQLALCHEMY_DATABASE_URI
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
 
 class ProductionConfig(BaseConfig):
-    DEBUG = False
+    DEBUG = True
+
+class TestConfig(BaseConfig):
+    DEBUG = True
+    TESTING = True
+    WTF_CSRF_ENABLED = False
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
