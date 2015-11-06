@@ -12,7 +12,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
 
 class ProductionConfig(BaseConfig):
-    DEBUG = True
+    DEBUG = False
 
 class TestConfig(BaseConfig):
     DEBUG = True
