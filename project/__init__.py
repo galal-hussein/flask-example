@@ -8,6 +8,7 @@ from flask.ext.login import LoginManager
 # create the application object
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
+print os.environ['APP_SETTINGS']
 # create the sqlalchemy object
 login_manager = LoginManager()
 

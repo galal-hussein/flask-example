@@ -8,6 +8,4 @@ dependencies:
 
 test:
   override:
-    - ls
-    - docker images
-    - docker run -v ./:/app -it husseingalal/flask-example python manage.py test
+    - docker run -it -e DATABASE_URL='' -e APP_SETTINGS='config.TestConfig' -v $PWD:/app husseingalal/flask-example python manage.py test
