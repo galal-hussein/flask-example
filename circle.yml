@@ -9,3 +9,9 @@ dependencies:
 test:
   override:
     - docker run -it -e DATABASE_URL='' -e APP_SETTINGS='config.TestConfig' -v $PWD:/app husseingalal/flask-example python manage.py test
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - $DEPLOY
