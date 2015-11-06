@@ -14,4 +14,4 @@ deployment:
   hub:
     branch: master
     commands:
-      - curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/husseingalal/flask-example/trigger/14d0e764-d9df-4a3a-8903-870a2b0dcb77/
+      - $DEPLOY
