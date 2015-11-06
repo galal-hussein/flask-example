@@ -17,18 +17,18 @@ class TestUser(BaseTestCase):
     def test_user_registeration(self):
         with self.client:
             response = self.client.post('/register', data=dict(
-                username='Michael', email='michael@shit.com',
+                username='Hussein', email='michael@shit.com',
                 password='python', confirm='python'
             ), follow_redirects=True)
             self.assertIn(b'Flask Intro', response.data)
-            self.assertTrue(current_user.name == "Michael")
+            self.assertTrue(current_user.name == "Hussein")
             self.assertTrue(current_user.is_active())
 
     # Ensure errors are thrown during an incorrect user registration
     def test_incorrect_user_registeration(self):
         with self.client:
             response = self.client.post('/register', data=dict(
-                username='Michael', email='michael',
+                username='Hussein', email='michael',
                 password='python', confirm='python'
             ), follow_redirects=True)
             self.assertIn(b'Invalid email address.', response.data)
