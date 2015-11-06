@@ -4,9 +4,8 @@ machine:
 
 dependencies:
   override:
-    - pip install -r requirements.txt
+    - docker build -t husseingalal/flask-example .
 
 test:
   override:
-    - docker-compose up
-    - python manage.py test
+    - docker run -itd hussienglala/flask-example python manage.py test
