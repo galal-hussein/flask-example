@@ -8,5 +8,6 @@ dependencies:
 
 test:
   override:
+    - ls
     - docker images
-    - docker run -it husseingalal/flask-example python manage.py test
+    - docker run -v ./:/app -it husseingalal/flask-example python manage.py test
